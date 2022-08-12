@@ -1,0 +1,152 @@
+<template>
+
+  <div class="container">
+  
+    <div class="product-card">
+      <div class="product-tumb">
+        <header>
+          <slot name="image"></slot>
+        </header>
+      </div>
+      <div class="product-details">
+
+        <h4>
+          <slot name="title"></slot>
+        </h4>
+
+        <div class="product-bottom-details">
+
+          <div class="product-price">
+            <slot name="price"></slot>
+          </div>
+            
+          <div class="product-links">
+             <slot name="action"></slot>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ProductListCom",
+};
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+.product-card {
+  width: 350px;
+  height: 450px;
+  position: relative;
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 50px auto;
+  background: #fafafa;
+}
+
+.product-tumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding: 50px;
+  background: #f0f0f0;
+}
+
+.product-details {
+  padding: 30px;
+}
+
+.product-catagory {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 18px;
+}
+
+.product-details h4 a {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  color: #363636;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+  color: #fbb72c;
+}
+
+.product-details p {
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 18px;
+  color: #999;
+}
+
+.product-bottom-details {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.product-bottom-details div {
+  float: left;
+  width: 50%;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #fbb72c;
+  font-weight: 600;
+}
+
+.product-price small {
+  font-size: 80%;
+  font-weight: 400;
+
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.product-links {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+.product-links a {
+  display: inline-block;
+  margin-left: 5px;
+  color: #e1e1e1;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.product-links a:hover {
+  color: #fbb72c;
+}
+</style>
